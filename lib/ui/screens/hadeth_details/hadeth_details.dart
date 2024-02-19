@@ -32,7 +32,7 @@ class _HadethDetailsState extends State<HadethDetails> {
         backgroundColor: AppColors.transparent,
         appBar: buildAppBar(),
         body: fileContent.isEmpty
-            ? const Center(child: CircularProgressIndicator(color: AppColors.orange,))
+            ? const Center(child: CircularProgressIndicator(color: AppColors.lightPrimary,))
             : SingleChildScrollView(
           child: Text(
             fileContent,

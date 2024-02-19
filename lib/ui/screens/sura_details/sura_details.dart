@@ -33,7 +33,7 @@ class _SuraDetailsState extends State<SuraDetails> {
         backgroundColor: AppColors.transparent,
         appBar: buildAppBar(args.suraName),
         body: fileContent.isEmpty
-            ? const Center(child: CircularProgressIndicator(color: AppColors.orange,))
+            ? const Center(child: CircularProgressIndicator(color: AppColors.lightPrimary,))
             : SingleChildScrollView(
               child: Text(
                   fileContent,

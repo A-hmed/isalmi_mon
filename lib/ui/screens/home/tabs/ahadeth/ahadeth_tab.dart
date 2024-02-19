@@ -30,7 +30,7 @@ class AhadethTab extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 3,
-          color: AppColors.orange,
+          color: AppColors.lightPrimary,
         ),
         const SizedBox(height: 4,),
         const Row(
@@ -43,7 +43,7 @@ class AhadethTab extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 3,
-          color: AppColors.orange,
+          color: AppColors.lightPrimary,
         ),
         Expanded(flex: 7,
           child: buildListView(),),

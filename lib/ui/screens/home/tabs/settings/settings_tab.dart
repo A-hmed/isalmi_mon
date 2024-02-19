@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:isalmi_mon_c10/ui/provider/theme_provider.dart';
 import 'package:isalmi_mon_c10/ui/utils/app_theme.dart';
 import 'package:provider/provider.dart';
 
@@ -16,21 +17,24 @@ class _SettingsTabState extends State<SettingsTab> {
   static const arabicValue = "ar";
   String selectedLocale = englishValue;
   late LocaleProvider provider;
+  late ThemeProvider themeProvider;
   @override
   Widget build(BuildContext context) {
     provider =  Provider.of(context);
+    themeProvider = Provider.of(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Text(
+          Text(
             "Language",
             textAlign: TextAlign.start,
-            style: AppTheme.mediumTitleTextStyle,
+            style: themeProvider.mediumTitleTextStyle,
           ),
           SizedBox(height: 18,),
-          buildLanguageDropDownMenu()
+          buildLanguageDropDownMenu(),
+          buildDarkThemeSwitch()
         ],
       ),
     );
@@ -63,4 +67,14 @@ class _SettingsTabState extends State<SettingsTab> {
       ],
     );
   }
+
+  buildDarkThemeSwitch() => Row(
+    children: [
+      Text("Dark Theme"),
+      Spacer(),
+      Switch(value: themeProvider.currentThemeMode == ThemeMode.dark, onChanged: (newValue){
+        themeProvider.toggleTheme(newValue);
+      })
+    ],
+  );
 }
